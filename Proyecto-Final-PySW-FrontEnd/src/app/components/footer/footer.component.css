@@ -1,0 +1,23 @@
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+.bg-color {
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(75, 67, 67), rgb(49, 47, 47));
+    color: rgba(255, 255, 255, 0.658);
+}
+
+.f-family{
+    font-family: fantasy;
+    font-size: 40px;
+}
+
+
+.red {
+    outline: red 1px solid;
+}
+
+.blue {
+    outline: 1px solid blue;
+}

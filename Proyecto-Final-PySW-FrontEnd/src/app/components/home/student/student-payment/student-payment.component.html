@@ -1,0 +1,59 @@
+<section class="container" *ngIf="this.loginService.isLogged() == 'student'">
+    <div class="col-12 row">
+        <div class="col-10 col-md-9 table-responsive text-center">
+            <table class="col-12 table table-hover" [mfData]="payments" #mf="mfDataTable" [mfRowsOnPage]="5">
+                <thead class="col-12">
+                    <tr class="col-12">
+                        <th class="col-2">
+                            <mfDefaultSorter by="name">Name</mfDefaultSorter>
+                        </th>
+
+                        <th class="col-2">
+                            <mfDefaultSorter by="amount_day">Amount Day</mfDefaultSorter>
+                        </th>
+
+                        <th class="col-2">
+                            <mfDefaultSorter by="pay_day">Pay Day</mfDefaultSorter>
+                        </th>
+
+                        <th class="col-2">
+                            <mfDefaultSorter by="pay_mode">Pay Mode</mfDefaultSorter>
+                        </th>
+
+                        <th class="col-2">
+                            <mfDefaultSorter by="price">Price</mfDefaultSorter>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr class="col-12" *ngFor="let p of mf.data">
+                        <td>{{p.name_arrangement}}</td>
+                        <td>{{p.amount_day}}</td>
+                        <td>{{p.pay_day | date: 'dd/MM/yyyy'}}</td>
+                        <td>{{p.pay_mode}}</td>   
+                        <td>{{p.price}}</td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td>
+                            <mfBootstrapPaginator></mfBootstrapPaginator>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="col-2 m-auto">
+            <button class="col-12 btn btn-primary" type="button" (click)="back()">BACK</button>
+        </div>
+    </div>
+</section>
+
+<section class="col-12 text-center" *ngIf="this.loginService.isLogged() != 'student'">
+    <h1 class="col-12">PAGE NOT FOUND</h1>
+    <h6 class="col-12">We're sorry. The page you are looking for cannot be found.</h6>
+    <img class="col-12" src="../../../../../assets/seguridad.jpg" alt="seguridad">
+</section>

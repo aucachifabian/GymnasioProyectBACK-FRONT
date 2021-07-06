@@ -1,0 +1,103 @@
+<!---------------------------------------------------------------->
+<!------------------------ COACH --------------------------------->
+<!---------------------------------------------------------------->
+<nav *ngIf="loginService.isLogged() == 'coach' && router.url != '/login' " class="navbar navbar-expand-md navbar-dark bg-gradient">
+    <div class="container-fluid row">
+        
+        <div class="col-7 row ">
+        <img class="icon col-4" style="width: 100px;" src="assets/img/logo.png">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse col-8" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-links">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" [routerLink]="['arrangement']">Arrangement</a>
+                </li>
+                
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Students
+                    </a>
+                    <ul class="dropdown-menu row" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item mt-1" [routerLink]="['assitance']"> Register Assistance </a></li>
+                      <li><a class="dropdown-item" [routerLink]="['payment']"> Register Payment </a></li>
+                      <li><a class="dropdown-item" [routerLink]="['student']"> Register Student </a></li>
+                    </ul>
+                  </li>           
+                
+
+ 
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Fitness
+                    </a>
+                    <ul class="dropdown-menu row" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item mt-1" [routerLink]="['training']"> Training </a></li>
+                      <li><a class="dropdown-item" [routerLink]="['routine']"> Routine Day </a></li>
+                      <li><a class="dropdown-item" [routerLink]="['dayRoutine']"> Routine Complete </a></li>
+                    </ul>
+                  </li>
+                
+                
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['user']">Users</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Coach
+                    </a>
+                    <ul class="dropdown-menu row" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item mt-1" [routerLink]="['statistic']"> Statistic </a></li>
+                      <li><a class="dropdown-item" [routerLink]="['coach']"> Register new Coach </a></li>
+                    </ul>
+                  </li>
+
+            </ul>
+        </div>
+
+           </div>
+            <div class="col-3 row">
+                <h6 class="col-8 text-white text-end fw-bold"> {{loginService.isLogged() | titlecase}} {{loginService.isPerson()}}</h6>
+                <button class="col-3 btn float-end btn-danger" [routerLink]="['Login']" (click)="logout()">(Exit)</button>
+            </div>
+    </div>
+</nav>
+
+
+<!---------------------------------------------------------------->
+<!------------------------ STUDENT --------------------------------->
+<!---------------------------------------------------------------->
+<nav *ngIf="loginService.isLogged() == 'student' && router.url != '/login' " class="navbar navbar-expand-md navbar-dark bg-gradient">
+    <div class="container-fluid row">
+
+        <div class="col-7 row ">
+        <img class="icon col-4" style="width: 100px;" src="assets/img/logo.png">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse col-8" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-links">
+                <li class="nav-item">
+                    <a class="nav-link btn" aria-current="page" (click)="checkAssistance()"> assitance</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn" aria-current="page" (click)="checkPayment()"> Payments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn" aria-current="page" (click)="checkRoutine()"> Routines</a>
+                </li>
+            </ul>
+        </div>
+
+           </div>
+            <div class="col-3 row">
+                <h6 class="col-8 text-white text-end fw-bold"> {{loginService.isLogged() | titlecase}} {{loginService.isPerson()}}</h6>
+                <button class="col-3 btn float-end btn-danger" [routerLink]="['Login']" (click)="logout()">(Exit)</button>
+            </div>
+    </div>
+</nav>

@@ -1,0 +1,150 @@
+* {
+  padding: 0%;
+  margin: 0%;
+
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+/***********************************************/
+
+.red {
+  outline: red 1px solid;
+}
+
+.blue {
+  outline: solid 1px blue;
+}
+
+/***************************SECTION1***************************/
+/*************************BUTTON-LOGIN*************************/
+
+.btn-login {
+  position: fixed;
+  top: 5%;
+  right: 1%;
+  width: 15%;
+  z-index: 1;
+}
+
+.btn-login > button {
+  border-style: none;
+  border-radius: 20px;
+  color: white;
+  font-size: 20px;
+  background: linear-gradient(to right, #e63131, #202231);
+}
+
+.btn-login > button:hover {
+  background: linear-gradient(to right,#ff0000, #c31313, #202231);
+}
+
+
+/***************************SECTION2***************************/
+/**************************************************************/
+
+.p-absolute {
+  position: absolute;
+  top: 0%;
+  left: 5%;
+  font-size: 90px;
+  z-index: 2;
+  color: #000000;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+span {
+  color: #800000;
+}
+
+.video-animation {
+  animation-name: video-animation;
+  animation-duration: 1s;
+}
+
+@keyframes video-animation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+/***************************SECTION3***************************/
+/**************************************************************/
+
+.bg-dg{
+  background: linear-gradient(to right, rgb(34, 32, 32),rgba(144, 52, 52, 0.829), rgba(161, 32, 32, 0.9), rgba(231, 6, 6, 0.685), rgba(255, 0, 0, 0.486));
+}
+
+.h-200{
+  height: 200px;
+}
+
+.br-100 {
+  border-radius: 100%;
+  height: 100px;
+}
+
+/*************SLIDER*************/
+
+.slider {
+  overflow: hidden;
+}
+
+.slider-animation {
+  display: flex;
+
+  animation-name: sliderChange;
+  animation-duration: 120s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+}
+
+.slider-animation:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+.slider-animation img {
+  width: 200px;
+  height: 200px;
+}
+
+
+@keyframes sliderChange {
+  
+  0% {
+    margin-left: 0%;
+  }
+
+  25% {
+    margin-left: -187.5%;
+  }
+
+  50% {
+    margin-left: -375%;
+  }
+
+  75% {
+    margin-left: -562.5%;
+  }
+
+  100% {
+    margin-left: -675%;
+  }
+
+}
+
+.p-img {
+  height: 100px;
+  opacity: 0.85;
+}
+
+
+/**************************************************************/

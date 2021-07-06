@@ -1,0 +1,13 @@
+1- git pull	(para actualizar el repositorio)
+2- git add . 	(para agregar todo a la area de trabajo)
+3- git commit -m "mi primer commit"
+4- git push -u origin master
+
+* git clone https://github.com/Jcat-07/Proyecto-Final-PySW-2021.git (para clonar el proyecto)
+* git init 	(para inicializar)
+* git remote add origin https://github.com/Jcat-07/Proyecto-Final-PySW-2021.git (para agregar url)
+
+* git log	(para ver los registros)
+* git status	(para ver estado)
+
+

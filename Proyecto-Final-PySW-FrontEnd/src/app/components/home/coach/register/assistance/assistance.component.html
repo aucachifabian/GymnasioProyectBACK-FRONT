@@ -1,0 +1,40 @@
+<section class="container" *ngIf="this.loginService.isLogged() == 'coach'">
+    <form class="col-12 d-block" #formAssistence="ngForm">
+        <div class="col-4 m-auto">
+            <label class="col-12 text-center m-auto" for="id_date">Date</label>
+            <input class="col-12 m-auto" type="date" name="date" id="id_date" [(ngModel)]="assistance.day" required #day="ngModel" />
+
+            <div class="col-12 alert alert-danger" *ngIf="day.invalid && (day.dirty || day.touched)">
+                <div *ngIf="day.errors.required">Date is required</div>
+            </div>
+        </div>
+
+        <div class="col-4 m-auto">
+            <label class="col-12 text-center m-auto" for="id_student">Student</label>
+            <select class="col-12" id="id_student" name="student" [(ngModel)]="student" required #check="ngModel">
+                <option *ngFor="let s of students" [ngValue]="s">{{s.surname}}, {{s.name}}</option>
+            </select>
+
+            <!--
+            {{check.invalid}}
+            {{check.dirty}}
+            {{check.touched}}
+            {{check.errors}}
+            -->
+
+            <div class="col-12 alert alert-danger" *ngIf="check.invalid && (check.dirty || check.touched)">
+                <div *ngIf="check.errors.required">Select Student is required</div>
+            </div>
+        </div>
+
+        <div class="col-4 m-auto my-5">
+            <button class="col-12 btn btn-primary" [disabled]="formAssistence.invalid" type="button" (click)="registerStudent(formAssistence)">Register Assistence</button>
+        </div>
+    </form>
+</section>
+
+<section class="col-12 text-center" *ngIf="this.loginService.isLogged() != 'coach'">
+        <h1 class="col-12">PAGE NOT FOUND</h1>
+        <h6 class="col-12">We're sorry. The page you are looking for cannot be found.</h6>
+        <img class="col-12 img-block" src="../../../../../assets/seguridad.jpg" alt="seguridad">
+</section>

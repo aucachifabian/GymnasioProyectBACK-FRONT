@@ -1,0 +1,147 @@
+<section class="test" *ngIf="this.loginService.isLogged() == 'coach'">
+    <div class="row">
+        <div class="col-xl-4 col-md-4 col-sm-6 col-12 mb-5">
+            <div class="card">
+                <img src="assets/imgicon/cur1.jpg" width="200" height="300" class="card-img-top img-student" alt="...">
+                <div class="card-body">
+                    <h4 class="titulo">Gratuito</h4>
+
+                    <p class="card-text">Certificados Oficiales .- </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-4 col-sm-6 col-12 mb-5">
+            <div class="card">
+                <img src="assets/imgicon/cur2.jpg" width="200" height="300" class="card-img-top img-student" alt="...">
+                <div class="card-body">
+
+                    <h4 class="titulo">Descuento por planilla</h4>
+
+                    <p class="card-text">Con certificados de aprobación.-</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-4 col-sm-6 col-12 mb-5">
+            <div class="card">
+                <img src="assets/imgicon/cur3.jpg" width="200" height="300" class="card-img-top img-student" alt="...">
+                <div class="card-body">
+
+                    <h4 class="titulo">Gratuito</h4>
+
+                    <p class="card-text">Transmitido por You Tuve .-</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <form class="col-12 container" #formStudent="ngForm">
+       <div class="col-12 row mx-auto">
+        <h5 class="text-center mx-auto fs-3 pt-3 pb-3"> Registro de Personas </h5>
+       </div>
+        <div class="col-12 row row-cols-3 my-3">
+            <div>
+                <label class="col-12" for="id_dni">DNI</label>
+                <span> </span>
+                <input class="col-10" type="text" id="id_dni" minlength="6" name="dni" [(ngModel)]="student.dni" required #dni="ngModel" />
+                <div class="col-12 alert alert-danger" id="danger" *ngIf="dni.invalid && (dni.dirty || dni.touched)">
+
+                    <div *ngIf="dni.errors.minlength">must be 6 characters</div>
+                    <div *ngIf="dni.errors.required">DNI is required</div>
+
+                </div>
+            </div>
+
+            <div>
+                <label class="col-12" for="id_name">Name</label>
+                <input class="col-10" type="text" id="id_name" placeholder="name" name="name" [(ngModel)]="student.name" required #name="ngModel" />
+                
+                <div class="col-12 alert alert-danger" id="danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                    <div *ngIf="name.errors.required">Name is required</div>
+                </div>
+            </div>
+
+            <div>
+                <label class="col-12" for="id_surname">Surname</label>
+                <input class="col-10" type="text" id="id_surname" name="surname" [(ngModel)]="student.surname" required #surname="ngModel" />
+                
+                <div class="col-12 alert alert-danger" id="danger" *ngIf="surname.invalid && (surname.dirty || surname.touched)">
+                    <div *ngIf="surname.errors.required">Surname is required</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 row row-cols-3 my-3">
+            <div>
+                <label class="col-12" for="id_email">Email</label>
+                <input class="col-10" type="email" id="id_email" placeholder="usuario@gmail.com" name="email" [(ngModel)]="student.email" required #email="ngModel" />
+                
+                <div class="col-12 alert alert-danger" id="danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <div *ngIf="email.errors.required">Email is required</div>
+                </div>
+            </div>
+
+            <div>
+                <label class="col-12" for="id_phone">Phone</label>
+                <input class="col-10" type="text" id="id_phone" name="phone" [(ngModel)]="student.phone" required #phone="ngModel" />
+                
+                <div class="col-12 alert alert-danger" id="danger" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                    <div *ngIf="phone.errors.required">Phone is required</div>
+                </div>
+            </div>
+
+            <div>
+                <label class="col-12" for="id_address">Address</label>
+                <input class="col-10" type="text" id="password" name="address" [(ngModel)]="student.address" required #adress="ngModel" />
+                
+                <div class="col-12 alert alert-danger" id="danger" *ngIf="adress.invalid && (adress.dirty || adress.touched)">
+                    <div *ngIf="adress.errors.required">Address is required</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 row row-cols-3 my-3">
+            <div>
+                <label class="col-12" id="id_birth_date">Birth Date</label>
+                <input class="col-10" type="date" id="id_birth_date" name="birth_date" [(ngModel)]="student.birth_date" required #brithdate="ngModel" />
+                
+                <div class="col-12 alert alert-danger" id="danger" *ngIf="brithdate.invalid && (brithdate.dirty || brithdate.touched)">
+                    <div *ngIf="brithdate.errors.required">Birth Date is required</div>
+                </div>
+            </div>
+
+            <div>
+                <label class="col-12" for="id_start_date">Start Date</label>
+                <input class="col-10" type="date" id="id_start_date" name="start_date" [(ngModel)]="student.start_date" required #startdate="ngModel" />
+                
+                <div class="col-12 alert alert-danger" id="danger" *ngIf="startdate.invalid && (startdate.dirty || startdate.touched)">
+                    <div *ngIf="startdate.errors.required">Start Date is required</div>
+                </div>
+            </div>
+
+            <div>
+                <label class="col-12" for="id_arrangement">Arrangement</label>
+                <select class="col-10" id="id_arrangement" name="arrangement" [(ngModel)]="student.arrangement" required #arragement="ngModel">
+                <option disabled selected >Selected arrangement</option>
+                <option  *ngFor="let a of arrangements" [ngValue]="a">
+                      {{a.name}} ${{a.price}} Day: {{a.amount_day}}
+                  </option>
+              </select>
+
+                <div class="col-12 alert alert-danger" id="danger" *ngIf="arragement.invalid && (arragement.dirty || arragement.touched)">
+                    <div *ngIf="arragement.errors.required">Arrangement is required</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-3">
+            <button class="d-block m-auto" type="button" [disabled]="formStudent.invalid" (click)="registerStudent(formStudent)">REGISTER</button>
+        </div>
+    </form>
+</section>
+
+<section class="col-12 text-center" *ngIf="this.loginService.isLogged() != 'coach'">
+    <h1 class="col-12">PAGE NOT FOUND</h1>
+    <h6 class="col-12">We're sorry. The page you are looking for cannot be found.</h6>
+    <img class="col-12" src="../../../../../assets/seguridad.jpg" alt="seguridad">
+</section>

@@ -1,0 +1,244 @@
+<section *ngIf="this.loginService.isLogged() == 'coach' " class="col-12 d-flex row container-fluid">
+
+    <div class="col-12 row text-center mt-4">
+        <div class="col-md-8 mx-auto">
+            <div class="wizard">
+                <div class="wizard-inner">
+                    <div class="connecting-line"></div>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="{{ step1 }}">
+                            <a href="" data-toggle="tab" aria-controls="step1" role="tab" aria-expanded="true"><span
+                                    class="round-tab">1 </span> <i> Completar Formulario</i></a>
+                        </li>
+                        <li role="presentation" class="{{ step2 }}">
+                            <a href="" data-toggle="tab" aria-controls="step2" role="tab" aria-expanded="false"><span
+                                    class="round-tab">2</span> <i> Seleccionar Ejercicios</i></a>
+                        </li>
+                        <li role="presentation" class="{{ step3 }}">
+                            <a href="" data-toggle="tab" aria-controls="step3" role="tab" aria-expanded="false"><span
+                                    class="round-tab">3</span> <i> Guardar </i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<div *ngIf="form" class="row col-12">
+    <div class="col-xl-3 d-xl-block d-none">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/81a29540400159.577dcf3623a88.gif"
+        srcset="https://mir-s3-cdn-cf.behance.net/project_modules/disp/81a29540400159.577dcf3623a88.gif 500w" 
+        sizes="(max-width: 400px) 100vw, 320px" alt="fitness workout Workoutanimation Work  excersise"
+        loading="lazy">
+    </div>
+     <form class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto m-4 form-rout" #formRoutine="ngForm">
+        <div class="text-center align-items-center">
+
+            <h4 class="text-center mx-auto"> Formulario de Rutinas Mensuales </h4>
+            <div class="col-10 py-1 mt-3 mx-auto">
+                <label class="col-12 align-items-lg-start" for="id_type">* Objetivo</label>
+                <input class="col-12" type="text" name="type" id="id_type" [(ngModel)]="routineWork.type"
+                    required #type="ngModel" />
+                <div class="col-12 alert alert-danger"
+                    *ngIf="type.invalid && (type.dirty || type.touched)">
+                    <div *ngIf="type.errors.required">Este campo es requerido</div>
+                </div>
+            </div>
+
+            <div class="col-10 py-1 mt-2 mx-auto">
+                <label class="col-12" for="id_serie">* Serie</label>
+                <input class="col-12" type="text" name="serie" id="id_serie" [(ngModel)]="routineWork.serie" required
+                #serie="ngModel"/>
+               <div class="col-12 alert alert-danger" *ngIf="serie.invalid && (serie.dirty || serie.touched)">
+                  <div *ngIf="serie.errors.required">Este campo es obigatorio</div>
+                </div>
+            </div> 
+            
+            <div class="col-10 py-1 mt-2 mx-auto">
+                <label class="col-12" for="id_repetition">* Repeticiones </label>
+                <input class="col-12" type="text" name="repetition" id="id_repetition" [(ngModel)]="routineWork.repetition" required
+                #repetition="ngModel"/>
+               <div class="col-12 alert alert-danger" *ngIf="repetition.invalid && (repetition.dirty || repetition.touched)">
+                  <div *ngIf="repetition.errors.required">Este campo es obigatorio</div>
+                </div>
+            </div>
+
+            <div class="col-10 py-1 mt-2 mx-auto">
+                <label class="col-12" for="id_rest">* Descanso </label>
+                <input class="col-12" type="text" name="repetition" id="id_rest" [(ngModel)]="routineWork.rest" required
+                #rest="ngModel"/>
+               <div class="col-12 alert alert-danger" *ngIf="rest.invalid && (rest.dirty || rest.touched)">
+                  <div *ngIf="rest.errors.required">Este campo es obigatorio</div>
+                </div>
+            </div>
+
+            <div class="col-10 mx-auto">
+                <label class="col-12 mt-2" for="id_intensity">* Intensidad</label>
+                <select class="col-10" id="id_intensity" name="intensity" [(ngModel)]="routineWork.intensity"
+                   required  #intensity="ngModel">
+                    <option (value)="routineWork.intensity"> {{ routineWork.intensity }} </option>
+                    <option *ngIf="routineWork.intensity != 'Baja' " value="Baja"> Baja </option>
+                    <option *ngIf="routineWork.intensity != 'Media' " value="Media"> Media </option>
+                    <option *ngIf="routineWork.intensity != 'Alta' " value="Alta"> Alta </option>
+                </select>
+            </div>
+
+
+            <div class="col-10 mx-auto">
+                <label for="img" class="form-label w-25 text-end mt-5">Seleccione Imagen</label>
+                <input required type="file" alife-file-to-base64 multiple id="img" name="img" (onFileChanged)="onFileChanges($event)"
+                    accept="image/x-png,image/gif,image/jpeg" class="mt-5 form-label text-white w-25 text-end" />    
+                <img class="form-label text-white text-end imgCarga" alt="Seleccione imagen" height="120vh" [src]="routineWork.img"> 
+            </div>
+
+
+            <div class="row col-10 mt-3 mx-auto">
+                <div class="col-2"></div>
+                <button class="col-8" [disabled]="formRoutine.invalid || routineWork.img==undefinided " (click)="step1Done()">Continue</button>
+                <div class="col-2"></div>
+            </div>
+
+            <div class="row col-10 mt-2 mb-3 mx-auto">
+                <div class="col-2"></div>
+                <button class="col-8" (click)="returnRoutine()">Return</button>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </form>   
+    <div class="col-xl-3 d-xl-block d-none">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/81a29540400159.577dcf3623a88.gif"
+        srcset="https://mir-s3-cdn-cf.behance.net/project_modules/disp/81a29540400159.577dcf3623a88.gif 500w" 
+        sizes="(max-width: 400px) 100vw, 320px" alt="fitness workout Workoutanimation Work  excersise"
+        loading="lazy">
+    </div>
+</div>
+
+
+
+
+    <div *ngIf="!form" class="col-12 mt-2 m-auto p-3 row carousel">
+        <div class="col-12 mx-auto row">
+            <h2 class="col-12 text-center">OUR TRAININGS</h2>
+            <div class="col-12 row mx-auto row my-3 text-center">
+                <div class="col-1 d-flex">
+                    <button class="col-12 border-0 br-100 m-auto" type="button" (click)="next('Left')">
+                        <img class="col-6" src="assets/imgSVG/arrow-left.svg" alt="Left" />
+                    </button>
+                </div>
+
+                <div class="col-3 d-flex">
+                    <div class="col-10 mx-auto cards">
+                        <div class="btn card mt-3 col-11 mx-auto ms-1 px-0 card-animation" (click)="addTraining(t)">
+                            <div class="col-10 mx-auto mt-2">
+                                <h5 class="card-title">{{trainings[index].type}}</h5>
+                                <img class="img-thumbnail h-200 card-img-top img-fluid" [src]="trainings[index].img" alt="img" />
+                                <div class="card-body">
+                                    <p class="card-text card-title">{{trainings[index].name}}</p>
+                                    <!-- <a class="btn mb-2 mt-2 px-4 float-end btn-class" >
+                                        select
+                                    </a>--->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 d-flex">
+                    <div class="col-10 mx-auto cards">
+                        <div class="btn card mt-3 col-11 mx-auto ms-1 px-0 card-animation" (click)="addTraining(t)">
+                            <div class="col-10 mx-auto mt-2">
+                                <h5 class="card-title">{{ trainings[ calcNext(index) ].type }}</h5>
+                                <img class="img-thumbnail h-200 card-img-top" [src]="trainings[ calcNext(index) ].img" alt="img" />
+                                <div class="card-body">
+                                    <p class="card-text card-title">{{ trainings[ calcNext(index) ].name}}</p>
+                                    <!-- <a class="btn mb-2 mt-2 px-4 float-end btn-class" >
+                                        select
+                                    </a>--->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 d-flex">
+                    <div class="col-10 mx-auto cards">
+                        <div class="btn card mt-3 col-11 mx-auto ms-1 px-0 card-animation" (click)="addTraining(t)">
+                            <div class="col-10 mx-auto mt-2">
+                                <h5 class="card-title">{{ trainings[ calcNext(index+1) ].type }}</h5>
+                                <img class="img-thumbnail h-200 card-img-top" [src]="trainings[ calcNext(index+1) ].img" alt="img" />
+                                <div class="card-body">
+                                    <p class="card-text card-title">{{ trainings[ calcNext(index+1) ].name}}</p>
+                                    <!-- <a class="btn mb-2 mt-2 px-4 float-end btn-class" >
+                                        select
+                                    </a>--->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1 d-flex">
+                    <button class="col-12 border-0 br-100 m-auto" type="button" (click)="next('Right')">
+                        <img class="col-6" src="assets/imgSVG/arrow-right.svg" alt="Right" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="row mt-3">
+            <hr> 
+            <div class="col-10 mx-auto row mt-3">
+                <div class="col-5 row">
+                    <p class="col-10 fw-bold fs-6">
+                        Cantidad de Ejercicios Asignados : {{ routineWork.training.length }}
+                    </p>
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn btn-primary my-auto col-3 mx-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Ver
+                    </button>
+                   <button type="button" class="btn btn-secondary my-auto col-3 mx-4" [disabled]="routineWork.training.length == 0" (click)=save(formRoutine)>
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+
+
+
+</section>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Rutinas Asigndas  : </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="accumulator col-12">
+                    <div class="row list-group-item outer">
+                        <div class="inner" *ngFor="let pal of routineWork.training; let i = index" [attr.data-index]="i">
+                            <p class="bg-secondary text-white ps-2 mt-1 rounded-3">
+                                {{pal.type}} {{pal.name}}
+                                <button class="btn btn-close bg-secondary text-white mt-0 mb-0 p-0" (click)="deleteTraining(i)">
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" (click)="clearArrayTraining()" class="btn btn-secondary">Limpiar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="col-12 text-center" *ngIf="loginService.isLogged() != 'coach'">
+    <h1 class="col-12">PAGE NOT FOUND</h1>
+    <h6 class="col-12">We're sorry. The page you are looking for cannot be found.</h6>
+    <img class="col-12" src="../../../../../assets/seguridad.jpg" alt="seguridad">
+</section>
+

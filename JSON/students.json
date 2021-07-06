@@ -1,0 +1,271 @@
+[{
+  "_id": {
+    "$oid": "60d5524040acae144c4ee4a1"
+  },
+  "dni": "39999999",
+  "name": "Diego",
+  "surname": "Quispe",
+  "email": "diego@gmail.com",
+  "phone": "+543999999",
+  "address": "M1 L1",
+  "birth_date": {
+    "$date": "2021-05-13T00:00:00Z"
+  },
+  "start_date": {
+    "$date": "2021-06-28T00:00:00Z"
+  },
+  "arrangement": {
+    "$oid": "60cfedfee7a3ea1eb89906c1"
+  },
+  "end_date": {
+    "$date": "2021-07-25T00:00:00Z"
+  },
+  "amount_day": 2,
+  "__v": 0,
+  "day_routine": {
+    "$oid": "60d3dcd1d8172b26f8008192"
+  }
+},{
+  "_id": {
+    "$oid": "60d5526a40acae144c4ee4a2"
+  },
+  "dni": "38888888",
+  "name": "Nahuel",
+  "surname": "Quispe",
+  "email": "nahuel@gmail.com",
+  "phone": "+543888888",
+  "address": "M2 L2",
+  "birth_date": {
+    "$date": "2021-04-15T00:00:00Z"
+  },
+  "start_date": {
+    "$date": "2021-06-28T00:00:00Z"
+  },
+  "arrangement": {
+    "$oid": "60cfee5ee7a3ea1eb89906c2"
+  },
+  "end_date": {
+    "$date": "2021-07-25T00:00:00Z"
+  },
+  "amount_day": 2,
+  "__v": 0,
+  "day_routine": {
+    "$oid": "60d3e2a9d8172b26f8008198"
+  }
+},{
+  "_id": {
+    "$oid": "60d5528e40acae144c4ee4a3"
+  },
+  "dni": "37777777",
+  "name": "Rodrigo",
+  "surname": "Quispe",
+  "email": "rodrigo@gmail.com",
+  "phone": "+543777777",
+  "address": "M3 L3",
+  "birth_date": {
+    "$date": "2021-05-21T00:00:00Z"
+  },
+  "start_date": {
+    "$date": "2021-06-28T00:00:00Z"
+  },
+  "arrangement": {
+    "$oid": "60cfee7ae7a3ea1eb89906c3"
+  },
+  "end_date": {
+    "$date": "2021-07-26T00:00:00Z"
+  },
+  "amount_day": 2,
+  "__v": 0,
+  "day_routine": {
+    "$oid": "60d3df92d8172b26f8008196"
+  }
+},{
+  "_id": {
+    "$oid": "60d552dd40acae144c4ee4a4"
+  },
+  "dni": "36666666",
+  "name": "Alejandro",
+  "surname": "Quispe",
+  "email": "ale@gmail.com",
+  "phone": "+54388666666",
+  "address": "M4 L4",
+  "birth_date": {
+    "$date": "2021-05-13T00:00:00Z"
+  },
+  "start_date": {
+    "$date": "2021-06-28T00:00:00Z"
+  },
+  "arrangement": {
+    "$oid": "60cfedfee7a3ea1eb89906c1"
+  },
+  "end_date": {
+    "$date": "2021-07-28T00:00:00Z"
+  },
+  "amount_day": 3,
+  "__v": 0,
+  "day_routine": {
+    "$oid": "60d3e26cd8172b26f8008197"
+  }
+},{
+  "_id": {
+    "$oid": "60d5531440acae144c4ee4a5"
+  },
+  "dni": "35555555",
+  "name": "Jonathan",
+  "surname": "Castillo",
+  "email": "jonhy@gmail.com",
+  "phone": "+54388555555",
+  "address": "M5 L5",
+  "birth_date": {
+    "$date": "2021-05-20T00:00:00Z"
+  },
+  "start_date": {
+    "$date": "2021-06-28T00:00:00Z"
+  },
+  "arrangement": {
+    "$oid": "60cfee5ee7a3ea1eb89906c2"
+  },
+  "end_date": {
+    "$date": "2021-07-28T00:00:00Z"
+  },
+  "amount_day": 2,
+  "__v": 0,
+  "day_routine": {
+    "$oid": "60d3de20d8172b26f8008194"
+  }
+},{
+  "_id": {
+    "$oid": "60d5534840acae144c4ee4a6"
+  },
+  "dni": "34444444",
+  "name": "Maximiliano",
+  "surname": "Castillo",
+  "email": "max@gmail.com",
+  "phone": "+543444444",
+  "address": "M6 L6",
+  "arrangement": {
+    "$oid": "60cfedfee7a3ea1eb89906c1"
+  },
+  "start_date": {
+    "$date": "2021-06-28T00:00:00Z"
+  },
+  "birth_date": {
+    "$date": "2021-05-12T00:00:00Z"
+  },
+  "end_date": {
+    "$date": "2021-08-04T00:00:00Z"
+  },
+  "amount_day": 4,
+  "__v": 0,
+  "day_routine": {
+    "$oid": "60d3e26cd8172b26f8008197"
+  }
+},{
+  "_id": {
+    "$oid": "60d5f0abffd89117807eead7"
+  },
+  "dni": "33333333",
+  "name": "Eduardo",
+  "surname": "Castillo",
+  "email": "edi@gmail.com",
+  "phone": "+5433333",
+  "address": "M7 L7",
+  "birth_date": {
+    "$date": "2021-06-16T00:00:00Z"
+  },
+  "start_date": {
+    "$date": "2021-06-28T00:00:00Z"
+  },
+  "arrangement": {
+    "$oid": "60cfee7ae7a3ea1eb89906c3"
+  },
+  "end_date": {
+    "$date": "2021-08-05T00:00:00Z"
+  },
+  "amount_day": 4,
+  "__v": 0,
+  "day_routine": {
+    "$oid": "60d3df92d8172b26f8008196"
+  }
+},{
+  "_id": {
+    "$oid": "60d5f0e0ffd89117807eead8"
+  },
+  "dni": "32222222",
+  "name": "Edwin",
+  "surname": "Castillo",
+  "email": "ed@gmail.com",
+  "phone": "+5422222",
+  "address": "M8 L8",
+  "birth_date": {
+    "$date": "2021-05-06T00:00:00Z"
+  },
+  "start_date": {
+    "$date": "2021-06-28T00:00:00Z"
+  },
+  "arrangement": {
+    "$oid": "60cfedfee7a3ea1eb89906c1"
+  },
+  "end_date": {
+    "$date": "2021-09-08T00:00:00Z"
+  },
+  "amount_day": 5,
+  "__v": 0,
+  "day_routine": {
+    "$oid": "60d3e26cd8172b26f8008197"
+  }
+},{
+  "_id": {
+    "$oid": "60d5f121ffd89117807eead9"
+  },
+  "dni": "31111111",
+  "name": "Mario",
+  "surname": "Quispe",
+  "email": "mar@gmail.com",
+  "phone": "+5411111",
+  "address": "M9 L9",
+  "birth_date": {
+    "$date": "2021-05-05T00:00:00Z"
+  },
+  "start_date": {
+    "$date": "2021-06-28T00:00:00Z"
+  },
+  "arrangement": {
+    "$oid": "60cfedfee7a3ea1eb89906c1"
+  },
+  "end_date": {
+    "$date": "2021-09-02T00:00:00Z"
+  },
+  "amount_day": 5,
+  "__v": 0,
+  "day_routine": {
+    "$oid": "60d3e26cd8172b26f8008197"
+  }
+},{
+  "_id": {
+    "$oid": "60d5f14cffd89117807eeada"
+  },
+  "dni": "30000000",
+  "name": "Alberto",
+  "surname": "Quispe",
+  "email": "alb@gmail.com",
+  "phone": "+54000000",
+  "address": "M10 L10",
+  "birth_date": {
+    "$date": "2021-05-12T00:00:00Z"
+  },
+  "start_date": {
+    "$date": "2021-06-28T00:00:00Z"
+  },
+  "arrangement": {
+    "$oid": "60cfedfee7a3ea1eb89906c1"
+  },
+  "end_date": {
+    "$date": "2021-09-08T00:00:00Z"
+  },
+  "amount_day": 3,
+  "__v": 0,
+  "day_routine": {
+    "$oid": "60d3dcd1d8172b26f8008192"
+  }
+}]

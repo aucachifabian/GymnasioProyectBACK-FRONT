@@ -1,0 +1,67 @@
+[{
+  "_id": {
+    "$oid": "60d4d96420ac2b144ceba3b3"
+  },
+  "type_user": "coach",
+  "user_name": "39111111",
+  "password": "123456789",
+  "coach": {
+    "$oid": "60d4c8ff20ac2b144ceba3a0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d5540340acae144c4ee4a8"
+  },
+  "student": {
+    "$oid": "60d5524040acae144c4ee4a1"
+  },
+  "type_user": "student",
+  "user_name": "39999999",
+  "password": "556556",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d5f1c6ffd89117807eeadb"
+  },
+  "student": {
+    "$oid": "60d5526a40acae144c4ee4a2"
+  },
+  "type_user": "student",
+  "user_name": "38888888",
+  "password": "945630",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d5f1d6ffd89117807eeadc"
+  },
+  "student": {
+    "$oid": "60d5528e40acae144c4ee4a3"
+  },
+  "type_user": "student",
+  "user_name": "37777777",
+  "password": "729708",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d5f1e0ffd89117807eeadd"
+  },
+  "student": {
+    "$oid": "60d552dd40acae144c4ee4a4"
+  },
+  "type_user": "student",
+  "user_name": "36666666",
+  "password": "450206",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d5f1eeffd89117807eeade"
+  },
+  "student": {
+    "$oid": "60d5531440acae144c4ee4a5"
+  },
+  "type_user": "student",
+  "user_name": "35555555",
+  "password": "654710",
+  "__v": 0
+}]

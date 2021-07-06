@@ -1,0 +1,489 @@
+[{
+  "_id": {
+    "$oid": "60d3dcd1d8172b26f8008192"
+  },
+  "routine": [
+    {
+      "$oid": "60d3ca1d5b1a5230c08adbfc"
+    },
+    {
+      "$oid": "60d3cc095b1a5230c08adc00"
+    },
+    {
+      "$oid": "60d3ce2f5b1a5230c08adc02"
+    },
+    {
+      "$oid": "60d3d18e5b1a5230c08adc04"
+    },
+    {
+      "$oid": "60d3d2635b1a5230c08adc05"
+    },
+    {
+      "$oid": "60d3cc351d2c9731e410f1d9"
+    },
+    {
+      "$oid": "60d3ce811d2c9731e410f1db"
+    },
+    {
+      "$oid": "60d3cfb51d2c9731e410f1dd"
+    }
+  ],
+  "objective": "Aumentar Masa Muscuar",
+  "intensity": "Baja",
+  "arrangement": {
+    "$oid": "60cfedfee7a3ea1eb89906c1"
+  },
+  "day": 8,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d3dd57d8172b26f8008193"
+  },
+  "routine": [
+    {
+      "$oid": "60d3cae21d2c9731e410f1d7"
+    },
+    {
+      "$oid": "60d3cc351d2c9731e410f1d9"
+    },
+    {
+      "$oid": "60d3ce811d2c9731e410f1db"
+    },
+    {
+      "$oid": "60d3cfb51d2c9731e410f1dd"
+    },
+    {
+      "$oid": "60d3d98d1484c32e44a6dac6"
+    },
+    {
+      "$oid": "60d3d3811d2c9731e410f1e4"
+    },
+    {
+      "$oid": "60d3d3601d2c9731e410f1e3"
+    },
+    {
+      "$oid": "60d3dab6d8172b26f8008190"
+    },
+    {
+      "$oid": "60d3d99f1484c32e44a6dac7"
+    },
+    {
+      "$oid": "60d3d2b41d2c9731e410f1e2"
+    },
+    {
+      "$oid": "60d3d2a11d2c9731e410f1e1"
+    },
+    {
+      "$oid": "60d3cfb51d2c9731e410f1dd"
+    },
+    {
+      "$oid": "60d3cfc71d2c9731e410f1de"
+    },
+    {
+      "$oid": "60d3cf765b1a5230c08adc03"
+    },
+    {
+      "$oid": "60d3d1bd1d2c9731e410f1df"
+    },
+    {
+      "$oid": "60d3d18e5b1a5230c08adc04"
+    }
+  ],
+  "objective": "Bajar de Peso",
+  "intensity": "Media",
+  "arrangement": {
+    "$oid": "60cfee5ee7a3ea1eb89906c2"
+  },
+  "day": 16,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d3de20d8172b26f8008194"
+  },
+  "routine": [
+    {
+      "$oid": "60d3caf11d2c9731e410f1d8"
+    },
+    {
+      "$oid": "60d3cc391d2c9731e410f1da"
+    },
+    {
+      "$oid": "60d3cfc71d2c9731e410f1de"
+    },
+    {
+      "$oid": "60d3ce9b1d2c9731e410f1dc"
+    },
+    {
+      "$oid": "60d3cae21d2c9731e410f1d7"
+    },
+    {
+      "$oid": "60d3cc351d2c9731e410f1d9"
+    },
+    {
+      "$oid": "60d3cfb51d2c9731e410f1dd"
+    },
+    {
+      "$oid": "60d3ce811d2c9731e410f1db"
+    },
+    {
+      "$oid": "60d3d1cf1d2c9731e410f1e0"
+    },
+    {
+      "$oid": "60d3d2b41d2c9731e410f1e2"
+    },
+    {
+      "$oid": "60d3d3811d2c9731e410f1e4"
+    },
+    {
+      "$oid": "60d3d98d1484c32e44a6dac6"
+    },
+    {
+      "$oid": "60d3d2a11d2c9731e410f1e1"
+    },
+    {
+      "$oid": "60d3d18e5b1a5230c08adc04"
+    },
+    {
+      "$oid": "60d3ce811d2c9731e410f1db"
+    },
+    {
+      "$oid": "60d3cae21d2c9731e410f1d7"
+    }
+  ],
+  "objective": "Parte superior",
+  "intensity": "Alta",
+  "arrangement": {
+    "$oid": "60cfee5ee7a3ea1eb89906c2"
+  },
+  "day": 16,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d3dedbd8172b26f8008195"
+  },
+  "routine": [
+    {
+      "$oid": "60d3ca1d5b1a5230c08adbfc"
+    },
+    {
+      "$oid": "60d3cc095b1a5230c08adc00"
+    },
+    {
+      "$oid": "60d3d4395b1a5230c08adc07"
+    },
+    {
+      "$oid": "60d3d98d1484c32e44a6dac6"
+    },
+    {
+      "$oid": "60d3dc03d8172b26f8008191"
+    },
+    {
+      "$oid": "60d3ce9b1d2c9731e410f1dc"
+    },
+    {
+      "$oid": "60d3ce811d2c9731e410f1db"
+    },
+    {
+      "$oid": "60d3ce2f5b1a5230c08adc02"
+    },
+    {
+      "$oid": "60d3cfc71d2c9731e410f1de"
+    },
+    {
+      "$oid": "60d3cc095b1a5230c08adc00"
+    },
+    {
+      "$oid": "60d3cc095b1a5230c08adc00"
+    },
+    {
+      "$oid": "60d3caf11d2c9731e410f1d8"
+    },
+    {
+      "$oid": "60d3caf11d2c9731e410f1d8"
+    },
+    {
+      "$oid": "60d3ca1d5b1a5230c08adbfc"
+    },
+    {
+      "$oid": "60d3ca1d5b1a5230c08adbfc"
+    },
+    {
+      "$oid": "60d3d4395b1a5230c08adc07"
+    },
+    {
+      "$oid": "60d3d98d1484c32e44a6dac6"
+    },
+    {
+      "$oid": "60d3d99f1484c32e44a6dac7"
+    },
+    {
+      "$oid": "60d3d4395b1a5230c08adc07"
+    },
+    {
+      "$oid": "60d3d98d1484c32e44a6dac6"
+    },
+    {
+      "$oid": "60d3dc03d8172b26f8008191"
+    },
+    {
+      "$oid": "60d3dab6d8172b26f8008190"
+    },
+    {
+      "$oid": "60d3d4395b1a5230c08adc07"
+    },
+    {
+      "$oid": "60d3d98d1484c32e44a6dac6"
+    }
+  ],
+  "objective": "Gluteos Firmes y quemar grasa",
+  "intensity": "Media",
+  "arrangement": {
+    "$oid": "60cfee7ae7a3ea1eb89906c3"
+  },
+  "day": 24,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d3df92d8172b26f8008196"
+  },
+  "routine": [
+    {
+      "$oid": "60d3d2a11d2c9731e410f1e1"
+    },
+    {
+      "$oid": "60d3cfb51d2c9731e410f1dd"
+    },
+    {
+      "$oid": "60d3cc351d2c9731e410f1d9"
+    },
+    {
+      "$oid": "60d3cae21d2c9731e410f1d7"
+    },
+    {
+      "$oid": "60d3d1bd1d2c9731e410f1df"
+    },
+    {
+      "$oid": "60d3d3811d2c9731e410f1e4"
+    },
+    {
+      "$oid": "60d3cfc71d2c9731e410f1de"
+    },
+    {
+      "$oid": "60d3cc391d2c9731e410f1da"
+    },
+    {
+      "$oid": "60d3caf11d2c9731e410f1d8"
+    },
+    {
+      "$oid": "60d3d1bd1d2c9731e410f1df"
+    },
+    {
+      "$oid": "60d3d2a11d2c9731e410f1e1"
+    },
+    {
+      "$oid": "60d3cfb51d2c9731e410f1dd"
+    },
+    {
+      "$oid": "60d3cc351d2c9731e410f1d9"
+    },
+    {
+      "$oid": "60d3caf11d2c9731e410f1d8"
+    },
+    {
+      "$oid": "60d3ce9b1d2c9731e410f1dc"
+    },
+    {
+      "$oid": "60d3d1cf1d2c9731e410f1e0"
+    },
+    {
+      "$oid": "60d3d3811d2c9731e410f1e4"
+    },
+    {
+      "$oid": "60d3d4395b1a5230c08adc07"
+    },
+    {
+      "$oid": "60d3d3601d2c9731e410f1e3"
+    },
+    {
+      "$oid": "60d3d2a11d2c9731e410f1e1"
+    },
+    {
+      "$oid": "60d3d1bd1d2c9731e410f1df"
+    },
+    {
+      "$oid": "60d3cfb51d2c9731e410f1dd"
+    },
+    {
+      "$oid": "60d3ce811d2c9731e410f1db"
+    },
+    {
+      "$oid": "60d3cc351d2c9731e410f1d9"
+    }
+  ],
+  "objective": "Cuerpo Reloj de Arena",
+  "intensity": "Alta",
+  "arrangement": {
+    "$oid": "60cfee7ae7a3ea1eb89906c3"
+  },
+  "day": 24,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d3e26cd8172b26f8008197"
+  },
+  "routine": [
+    {
+      "$oid": "60d3ca1d5b1a5230c08adbfc"
+    },
+    {
+      "$oid": "60d3cc095b1a5230c08adc00"
+    },
+    {
+      "$oid": "60d3cf765b1a5230c08adc03"
+    },
+    {
+      "$oid": "60d3d18e5b1a5230c08adc04"
+    },
+    {
+      "$oid": "60d3d2635b1a5230c08adc05"
+    },
+    {
+      "$oid": "60d3d2635b1a5230c08adc05"
+    },
+    {
+      "$oid": "60d3d3315b1a5230c08adc06"
+    },
+    {
+      "$oid": "60d3d4395b1a5230c08adc07"
+    }
+  ],
+  "objective": "Sin objetivo - Primera vez",
+  "intensity": "Baja",
+  "arrangement": {
+    "$oid": "60cfedfee7a3ea1eb89906c1"
+  },
+  "day": 8,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d3e2a9d8172b26f8008198"
+  },
+  "routine": [
+    {
+      "$oid": "60d3ce2f5b1a5230c08adc02"
+    },
+    {
+      "$oid": "60d3d18e5b1a5230c08adc04"
+    },
+    {
+      "$oid": "60d3d3601d2c9731e410f1e3"
+    },
+    {
+      "$oid": "60d3d1bd1d2c9731e410f1df"
+    },
+    {
+      "$oid": "60d3ce811d2c9731e410f1db"
+    },
+    {
+      "$oid": "60d3cf765b1a5230c08adc03"
+    },
+    {
+      "$oid": "60d3d2635b1a5230c08adc05"
+    },
+    {
+      "$oid": "60d3d4395b1a5230c08adc07"
+    },
+    {
+      "$oid": "60d3cfb51d2c9731e410f1dd"
+    },
+    {
+      "$oid": "60d3d2a11d2c9731e410f1e1"
+    },
+    {
+      "$oid": "60d3dc03d8172b26f8008191"
+    },
+    {
+      "$oid": "60d3dab6d8172b26f8008190"
+    },
+    {
+      "$oid": "60d3cae21d2c9731e410f1d7"
+    },
+    {
+      "$oid": "60d3cc351d2c9731e410f1d9"
+    },
+    {
+      "$oid": "60d3cfb51d2c9731e410f1dd"
+    },
+    {
+      "$oid": "60d3dc03d8172b26f8008191"
+    }
+  ],
+  "arrangement": {
+    "$oid": "60cfee5ee7a3ea1eb89906c2"
+  },
+  "day": 16,
+  "objective": "Aprender - Primera vez",
+  "intensity": "Media",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d3e40ad8172b26f800819a"
+  },
+  "routine": [
+    {
+      "$oid": "60d3cc351d2c9731e410f1d9"
+    },
+    {
+      "$oid": "60d3cae21d2c9731e410f1d7"
+    },
+    {
+      "$oid": "60d3ce811d2c9731e410f1db"
+    },
+    {
+      "$oid": "60d3cfb51d2c9731e410f1dd"
+    },
+    {
+      "$oid": "60d3d98d1484c32e44a6dac6"
+    },
+    {
+      "$oid": "60d3d2a11d2c9731e410f1e1"
+    },
+    {
+      "$oid": "60d3cfb51d2c9731e410f1dd"
+    },
+    {
+      "$oid": "60d3ce811d2c9731e410f1db"
+    },
+    {
+      "$oid": "60d3d1bd1d2c9731e410f1df"
+    },
+    {
+      "$oid": "60d3d3601d2c9731e410f1e3"
+    },
+    {
+      "$oid": "60d3d2a11d2c9731e410f1e1"
+    },
+    {
+      "$oid": "60d3d3601d2c9731e410f1e3"
+    },
+    {
+      "$oid": "60d3ce811d2c9731e410f1db"
+    },
+    {
+      "$oid": "60d3cc351d2c9731e410f1d9"
+    },
+    {
+      "$oid": "60d3cae21d2c9731e410f1d7"
+    },
+    {
+      "$oid": "60d3d3811d2c9731e410f1e4"
+    }
+  ],
+  "objective": "Cuerpo Reloj de Arena",
+  "intensity": "Media",
+  "arrangement": {
+    "$oid": "60cfee5ee7a3ea1eb89906c2"
+  },
+  "day": 16,
+  "__v": 0
+}]

@@ -1,0 +1,290 @@
+<section class="container">
+    <div class="row col-12">
+        <div *ngIf="paymentSuccess==true" class="col-10 mx-auto mt-3 mb-3">
+        <div class="row  mt-3 mb-3">
+        <button class="col-4 pb-2 pt-1 mx-auto" type="button" (click)="print()">Print Payment</button>
+        <div class="col-2"></div>
+        <button class="col-4 pb-2 pt-1 mx-auto" type="button" (click)="initVariables()">New Payment</button>
+        </div>
+        <form id="printJS-form" class="col-10 mx-auto row bg-white  container-pay">
+        <div class="col-10 mx-auto">
+
+            <h3>payment summary</h3>
+            <div class="row my-3">
+              <div class="col-10">
+                <p class="d-inline-block fs-5 fw-bolder">Arrangement :   </p><p class="ps-2 d-inline-block" *ngIf="payment.name_arrangement != undefined "> {{ payment.name_arrangement }}</p>
+              </div>
+              <div class="col-2">
+                <!--<img src="~/" alt="icono empresa"/>-->
+              </div>
+            </div>
+          
+            <hr/>
+            <br> 
+            <div class="row fact-info mt-3">
+              <div class="col-3">
+                <h6> Student </h6>
+                <p *ngIf=" student != '' ">
+                  {{ student }}
+                </p>
+              </div>
+              <div class="col-3">
+                <h6> Coach </h6>
+                <p>
+                    {{ loginService.isPerson() }}
+                </p>
+              </div>
+              <div class="col-3">
+                <h6>Date</h6>
+                <p *ngIf=" payment.pay_day != undefined "> {{ payment.pay_day }} </p>    
+              </div>
+              <div class="col-3">
+                <h6>Mode Of Payment</h6>
+                <p *ngIf=" payment.pay_mode != undefined "> {{ payment.pay_mode }} </p>
+              </div>
+            </div>
+            <br>
+            <div class="row my-3">
+              <table class="table table-borderless factura">
+                <hr>
+                <tbody class="col-12 row">
+                   
+                    <tr class="col-12 row">
+                        <th class="col-6">Descripcion</th>
+                        <th class="col-6 text-end">Precio</th>
+                    </tr>
+                  
+                <tr class="col-12 row">
+                    <th class="col-6"> {{ payment.name_arrangement }} - {{ payment.amount_day*4 }} days.</th>
+                    <th class="col-6 text-end">  ${{ payment.price }}</th>
+                </tr>
+                  
+                <tr class="col-12 row">
+                    <th class="col-6"> {{ routineWork.objective }} - {{ routineWork.intensity }}</th>
+                    <th class="col-6 text-end"> $0.00</th>
+                </tr>
+                  <hr>
+                  <tr class="col-12 row total-tr">
+                    <th class="col-6">Total : </th>
+                    <th class="col-6 text-end">  ${{ payment.price }} </th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <br>
+            <div class="cond row">
+              <div class="col-12 mt-3">
+                <h4> Payment Code </h4>
+                <p>
+                  Vencimiento :  1 mes desde la fecha de pago
+                  <br />
+                  <ngx-barcode bc-value="{{ codePayment }}" bc-display-value="true"></ngx-barcode>
+                  <br />
+                  Código Empresarial : {{ codePayment }}
+                </p>
+              </div>
+            </div>
+        </div>
+            <!-- <div class="title">
+              <h5 class="text-center"> Resumen de Pago </h5>
+          </div>
+           <div class="row col-10 mx-auto">
+            <h6 class="text-center"> Cobrador : {{ loginService.isPerson() }} </h6>
+            <h6 *ngIf=" student != '' " class="text-center"> Alumno : {{ student }} </h6> 
+            <h6 *ngIf=" payment.pay_mode != undefined " class="text-center"> Modo de Pago : {{ payment.pay_mode }} </h6> 
+            <h6 *ngIf=" payment.name_arrangement != undefined " class="text-center"> Plan : {{ payment.name_arrangement }} </h6>
+            <h6 *ngIf=" payment.pay_day != undefined " class="text-center"> Fecha de pago : {{ payment.pay_day }} </h6>
+           
+        </div>-->
+        </form>
+    </div>
+        <div *ngIf="paymentSuccess==false" class="col-8 pb-2 mt-3 mx-auto mb-3 contenedor form-payment">
+            <div class="col-11 mx-auto mt-3">
+                <h4 class="text-center mb-2"> Formulario de Pago  </h4>
+                <form class="col-12 row" #formSearch="ngForm">
+                        <label class="col-12" for="id_search"> * DNI</label>
+                    <div class="col-7">
+                        <input class="col-12" type="text" name="formDni" id="id_search" [(ngModel)]="formDni" required
+                            #dni="ngModel" />
+                        <div class="col-12 alert alert-danger" *ngIf="dni.invalid && (dni.dirty || dni.touched)">
+                            <div *ngIf="dni.errors.required">Dni is required</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <button class="col-12" [disabled]="formSearch.invalid" type="button"
+                            (click)="searchDni()">SEND</button>
+                    </div>
+                </form>
+            </div>
+    
+            <div class="col-11 mx-auto">
+                <form class="col-12" #formPrint="ngForm">
+                    <div class="col-12 my-1">
+                        <label class="col-12" for="id_student"> * Student</label>
+                        <input class="col-12" type="text" name="student" id="id_student" [(ngModel)]="student" disabled />
+                    </div>
+    
+                    <div class="row">
+                    <div class="col-6 my-1">
+                        <label class="col-12" for="id_date"> * Date</label>
+                        <input class="col-12" type="date" name="date" [(ngModel)]="payment.pay_day" required
+                            #date="ngModel" />
+    
+                        <div class="col-12 alert alert-danger" *ngIf="date.invalid && (date.dirty || date.touched)">
+                            <div *ngIf="date.errors.required">Date is required</div>
+                        </div>
+                    </div>
+    
+                    <div class="col-6 my-1">
+                        <label class="col-12" for="id_pay_mode"> * Mode of Payment</label>
+                        <select class="col-12" id="id_pay_mode" name="paymode" [(ngModel)]="payment.pay_mode" required
+                            #paymode="ngModel">
+                            <option value="cash">Cash</option>
+                            <option value="card">Card</option>
+                        </select>
+    
+                        <div class="col-12 alert alert-danger"
+                            *ngIf="paymode.invalid && (paymode.dirty || paymode.touched)">
+                            <div *ngIf="paymode.errors.required">Mode of pay is required</div>
+                        </div>
+                    </div>
+                   </div>
+
+                    <div class="col-12 my-1">
+                        <label class="col-12" for="id_arrangement"> * Arrangement</label>
+                        <div class="row mx-1 my-auto">
+                            <input class="col-9" type="text" name="arrangement" id="id_arrangement"
+                               [(ngModel)]="payment.name_arrangement" disabled />
+                               <button type="button" class="btn btn-primary mb-2 ms-4 col-2" [disabled]="changeRoutine" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                 change
+                               </button>                           
+                        </div>
+                    </div>
+                    <div class="col-12 my-1">
+                        <label class="col-12" for="id_arrangement"> * Routine</label>
+                        <div class="row mx-1 my-auto">
+                            <input class="col-9" type="text" name="arrangement" id="id_arrangement" placeholder="{{ routineWork.objective }} - {{ routineWork.intensity }}" disabled /> 
+                            <button class="btn btn-primary ms-4 mb-2 col-2" [disabled]="changeRoutine" type="button"
+                              data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                              Select
+                            </button>
+                            <p *ngIf="changeRoutine==false && routineWork.objective=='' " class="alert alert-danger col-12 d-flex align-items-center" role="alert">
+                                  Select routine
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                    <div class="col-6 my-1">
+                        <label class="col-10 mx-auto" for="id_amount_day">* Amount day</label>
+                        <input class="col-10 mx-auto" type="number" name="amount_day" id="id_amount_day"
+                            [(ngModel)]="payment.amount_day" disabled />
+                    </div>
+    
+                    <div class="col-6 my-1">
+                        <label class="col-10 mx-auto" for="id_price">* Price</label>
+                        <input class="col-10 mx-auto" type="number" name="price" id="id_price" [(ngModel)]="payment.price"
+                            disabled />
+                    </div>
+                </div>
+
+
+                    <div class="col-12 row mx-auto mb-5">
+                        <button class="col-5 mx-auto" type="button" [disabled]="formPrint.invalid || routineWork.objective=='' || payment.name_arrangement == '' "
+                            (click)="createPayment(formSearch, formPrint)">Register Payment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-start bg-dark w-50" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-white" id="offcanvasExampleLabel"> Listado Rutinas del plan : {{ payment.name_arrangement }} </h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="row col-10 mx-auto">
+            <label class="fs-6 col-4 text-end mx-1 text-white"> Buscar por Intensidad </label>
+            <select class="col-7" id="id_intensity" name="intensity" [(ngModel)]="queryIntensity"
+                (change)="changeintensity()">
+                <option > {{ queryIntensity }} </option>
+                <option value="Baja"> Baja </option>
+                <option value="Media"> Media </option>
+                <option value="Alta"> Alta </option>
+            </select>
+        </div>
+        <table class="table table-dark border-warning table-striped mx-auto w-100" [mfData]="dayRoutines"
+            #mf2="mfDataTable" [mfRowsOnPage]="3">
+            <thead class="mx-auto col-10">
+                <tr>
+                    <th>
+                        <mfDefaultSorter by="objective">Objetivo</mfDefaultSorter>
+                    </th>
+                    <th>
+                        <mfDefaultSorter by="resumen"> Resument </mfDefaultSorter>
+                    </th>
+                    <th>
+                        <mfDefaultSorter by="action"> Accion </mfDefaultSorter>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="mx-auto col-10">
+
+                <tr *ngFor="let itemA of mf2.data">
+                    <td>{{itemA.objective}}</td>
+                    <td>{{itemA.day}} dias, intensidad : {{itemA.intensity}} </td>
+                    <td><button name="action" class="bg-danger text-white ms-1 mx-1" (click)="selectRoutine(itemA)"
+                            data-bs-dismiss="offcanvas">Select</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot class="col-10 mx-auto">
+                <tr>
+                    <td colspan="5">
+                        <mfBootstrapPaginator [rowsOnPageSet]="[3,6,9,12]"></mfBootstrapPaginator>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="dropdown mt-3">
+        </div>
+    </div>
+</div>
+</section>
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="col-12 text-white">OUR PLANS MONTHLY</h2>
+            <button type="button" class="btn-close bg-info px-2" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="col-10 m-xl-auto text-center">
+             <div class="col-12">
+                    <div class="col-12 row justify-content-evenly bg-gradient">
+                        <div class="col-12 p-1 row m-2 border border-danger shadow-lg card-arrangement" *ngFor="let a of arrangements"  data-bs-dismiss="modal" (click)="changeArrangement(a)"> 
+                            <div class="col-5 m-auto">
+                                <h6 class="">{{a.name}}</h6>
+                                <h6 class="">DAY: {{a.amount_day}}</h6>
+                                <h6 class="">$ {{a.price}}!</h6> 
+                            </div>
+                            
+                            <div class="col-7">
+                                <img class="col-12 p-img" [src]="a.img" alt="img"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+           </div>
+        <div class="modal-footer">
+          <a type="button" class="btn btn-cose-bottom" data-bs-dismiss="modal">Close</a>
+        </div>
+      </div>
+    </div>
+  </div>

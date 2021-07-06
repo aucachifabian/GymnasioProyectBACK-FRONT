@@ -1,0 +1,82 @@
+<link rel=" stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<section *ngIf="router.url != '/login' " class="col-12 bg-color">
+    <div class="col-12 row border-top pt-5">    
+        <div class="col-4">
+            <google-map height="100%" width="100%" [zoom]="zoom" [center]="position" [options]="options" (mapClick)="click($event)">
+                <map-marker #markerElem [position]="position" [label]="label" [title]="title"></map-marker>
+                <button class="col-1 btn btn-light" type="button" (click)="zoomIn()">+</button>
+                <button class="col-1 btn btn-light" type="button" (click)="zoomOut()">-</button>
+            </google-map>
+        </div>
+
+        <div class="col-8 f-family px-5">
+            <h2 class="text-center f-family">Contact Info</h2>
+
+            <div class="col-12 text-start">
+                <p class="col-12">
+                    <i class="mx-1 fas fa-map-marker"></i>Gral. Belgrano
+                </p>
+            </div>
+
+            <div class="col-12 text-center">
+                <p class="col-12">
+                    <i class="mx-1 fab fa-facebook"></i>@Gym Jujuy
+                </p>
+            </div>
+
+            <div class="col-12 text-end">
+                <p class="col-12">
+                    <i class="mx-1 fas fa-phone"></i>4233563
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 border-top mt-5">
+        <div class="col-12 row text-center">
+            <div class="col-3">
+                <h3 class="col-12 border-bottom p-2">Explore</h3>
+
+                <p class="col-12 p-2"><a href="#">Home</a></p>
+                <p class="col-12 p-2"><a href="#">About</a></p>
+                <p class="col-12 p-2"><a href="#">Snippet</a></p>
+                <p class="col-12 p-2"><a href="#">Careers</a></p>
+            </div>
+    
+            <div class="col-3">
+                <h3 class="col-12 border-bottom p-2">Visit</h3>
+
+                <div class="col-12 text-start">
+                    <p class="col-12 border-bottom p-2">Lincoln House 78 Bhulabhai Desai Road Mumbai 400 026</p>
+                    <p class="col-12 border-bottom p-2">Phone: (22) 2363-3611 </p>
+                    <p class="col-12 border-bottom p-2">Fax: (22) 2363-0350 </p>
+                </div>
+            </div>
+    
+            <div class="col-3">
+                <h3 class="col-12 border-bottom p-2">Legal</h3>
+                
+                <p class="col-12 m-2 p-2"><a href="#">Terms and Conditions</a></p>
+                <p class="col-12 m-2 p-2"><a href="#">Private Policy</a></p>
+            </div>
+    
+            <div class="col-3">
+                <h3 class="col-12 border-bottom p-2">Subscribe to US</h3>
+                                
+                <p class="col-12 p-2"><a href="#">Subscribe</a></p>
+
+                <p class="col-12 p-2">Connect With US</p>
+                
+                <i class="p-2 fab fa-facebook-square social fa-2x"></i>
+                <i class="p-2 fab fa-linkedin social fa-2x"></i>
+                <i class="p-2 fab fa-twitter-square social fa-2x"></i>
+            </div>
+        </div>
+    
+        <div class="col-12 text-center p-5">
+            <p><i class="material-icons tiny">copyright</i>copyright 2021 - All right reserved</p>
+        </div>
+    </div>
+</section>

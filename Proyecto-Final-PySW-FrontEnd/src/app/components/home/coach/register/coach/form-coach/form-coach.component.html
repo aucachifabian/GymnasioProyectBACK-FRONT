@@ -1,0 +1,82 @@
+<section class="container" *ngIf="this.loginService.isLogged() == 'coach'">
+    <div class="col-12 text-center">
+        <img class="img-fom" height="100%" src="assets/imgicon/imgCoach.png" id="icon" alt="User Icon" />
+        <h3>
+            Create Coach
+        </h3>
+    </div>
+
+   
+    <form class="col-12" #formCoach="ngForm">
+        <div class="col-12 row row-cols-3 my-3">
+            <div class="">
+                <label class="col-12" for="id_dni">DNI</label>
+                <input class="col-10" type="text" id="id_dni" minlength="6" name="dni" [(ngModel)]="coach.dni" required #dni="ngModel"/>
+
+                <div class="col-12 alert alert-danger" id="danger" *ngIf="dni.invalid && (dni.dirty || dni.touched)">
+                    <div *ngIf="dni.errors.minlength">must be 6 characters</div>
+                    <div *ngIf="dni.errors.required"> enter DNI</div>
+                </div>
+            </div>
+
+            <div>
+                <label class="col-12" for="id_name">Name</label>
+                <input class="col-10" type="text" id="id_name" name="name" [(ngModel)]="coach.name" required #name="ngModel"/>
+                
+                <div class="col-12 alert alert-danger" id="danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                    <div *ngIf="name.errors.required">enter Name</div>
+                </div>
+            </div>
+
+            <div>
+                <label class="col-12" for="id_surname">Surname</label>
+                <input class="col-10" type="text" id="id_surname" name="surname" [(ngModel)]="coach.surname" required #surname="ngModel"/>
+                
+                <div class="col-12 alert alert-danger" id="danger" *ngIf="surname.invalid && (surname.dirty || surname.touched)">
+                    <div *ngIf="surname.errors.required">enter Surname</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 row row-cols-3 my-3">
+            <div>
+                <label class="col-12" for="id_email">Email</label>
+                <input class="col-10" type="email" id="id_email" placeholder="user@gmail.com" name="email" [(ngModel)]="coach.email" required #email="ngModel"/>
+                
+                <div class="col-12 alert alert-danger" id="danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <div *ngIf="email.errors.required">enter Email</div>
+                </div>
+            </div>
+
+            <div>
+                <label class="col-12" for="id_phone">Phone</label>
+                <input class="col-10" type="text" id="id_phone" name="phone" [(ngModel)]="coach.phone" required #phone="ngModel" />
+                
+                <div class="col-12 alert alert-danger" id="danger" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                    <div *ngIf="phone.errors.required">enter Phone</div>
+                </div>
+            </div>
+
+            <div>
+                <label class="col-12" id="id_birth_date">Birth Date</label>
+                <input class="col-10" type="date" id="id_birth_date" name="birth_date" [(ngModel)]="coach.birth_date" required #brithdate="ngModel"/>
+               
+                <div class="col-12 alert alert-danger" id="danger" *ngIf="brithdate.invalid && (brithdate.dirty || brithdate.touched)">
+                    <div *ngIf="brithdate.errors.required">enter Brith Date</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-3">
+            <button class="d-block m-auto my-1" type="button" [disabled]="formCoach.invalid" (click)="createCoach(formCoach)" *ngIf="action == 'new'">REGISTER</button>
+            <button class="d-block m-auto my-1" type="button" [disabled]="formCoach.invalid" (click)="updateCoach(formCoach)" *ngIf="action == 'edit'">UPDATE</button>
+            <button class="d-block m-auto my-1" type="button" (click)="return(formCoach)">RETURN</button>
+        </div>
+    </form>
+</section>
+
+<section class="col-12 text-center" *ngIf="this.loginService.isLogged() != 'coach'">
+    <h1 class="col-12">PAGE NOT FOUND</h1>
+    <h6 class="col-12">We're sorry. The page you are looking for cannot be found.</h6>
+    <img class="col-12 img-block" src="../../../../../assets/seguridad.jpg" alt="seguridad">
+</section>

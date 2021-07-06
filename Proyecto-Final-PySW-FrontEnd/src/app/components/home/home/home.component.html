@@ -1,0 +1,79 @@
+<section>
+    <div class="btn-login">
+        <button class="col-12" type="button" (click)="getLogin()">LOGIN</button>
+    </div>
+</section>
+
+<section class="col-12">
+    <p class="p-absolute"> 
+        FIGHT FOR <br/><span>BETTER</span><br/> HEALTH
+    </p>
+    <video class="col-12 video-animations" src="../../../../assets/video/VideoStock.mp4" controls autoplay loop></video>
+</section>
+
+<section class="col-12 row bg-dg py-5">
+    <div class="col-12 row" *ngIf="trainingCrt">
+        <h2 class="col-12 text-center">OUR TRAININGS</h2>
+
+        <div class="col-1 d-flex">
+            <button class="col-12 border-0 br-100 m-auto" type="button" (click)="nextLeft()">
+                <img class="col-6" src="../../../../assets/imgSVG/arrow-left.svg" alt="Left" />
+            </button>
+        </div>
+
+        <div class="col-10 row my-3 text-center">
+            <div class="col-3 border rounded-3 m-auto">
+                <h6 class="col-12 mb-2">{{trainings[position1].name}}</h6>
+                <img class="col-12 h-200 border rounded-3" [src]="trainings[position1].img" />
+            </div>
+
+            <div class="col-3 border rounded-3 m-auto">
+                <h6 class="col-12 mb-2">{{trainings[position2].name}}</h6>
+                <img class="col-12 h-200 border rounded-3" [src]="trainings[position2].img" />
+            </div>
+
+            <div class="col-3 border rounded-3 m-auto">
+                <h6 class="col-12 mb-2">{{trainings[position3].name}}</h6>
+                <img class="col-12 h-200 border rounded-3" [src]="trainings[position3].img" />
+            </div>
+        </div>
+
+        <div class="col-1 d-flex">
+            <button class="col-12 border-0 br-100 m-auto" type="button" (click)="nextRight()">
+                <img class="col-6" src="../../../../assets/imgSVG/arrow-right.svg" alt="Right" />
+            </button>
+        </div>
+    </div>
+
+
+    <div class="col-6 text-center">
+        <h2 class="col-12">OUR TRAINERS</h2>
+        <div class="col-6 slider m-auto">
+            <div class="slider-animation">
+                <div class="border rounded-3 mx-3" *ngFor="let t of trainings">
+                    <h6 class="col-12 mb-2">{{t.name}}</h6>
+                    <img class="col-12 border border-bottom-0 rounded-3" [src]="t.img"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 text-center">
+        <h2 class="col-12">OUR PLANS MONTHLY</h2>
+        <div class="col-12">
+            <div class="col-12 row justify-content-evenly">
+                <div class="col-5 p-1 row m-2 border border-danger shadow-lg" *ngFor="let a of arrangements"> 
+                    <div class="col-4 m-auto">
+                        <h6 class="">{{a.name}}</h6>
+                        <h6 class="">DAY: {{a.amount_day}}</h6>
+                        <h6 class="">$ {{a.price}}!</h6> 
+                    </div>
+                    
+                    <div class="col-8">
+                        <img class="col-12 p-img" [src]="a.img" alt="img"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

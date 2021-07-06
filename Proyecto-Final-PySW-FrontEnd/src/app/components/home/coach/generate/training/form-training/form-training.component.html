@@ -1,0 +1,67 @@
+<!------------------------------>
+<!-- Register/Edit Training----->
+<!------------------------------>
+
+<section class="container" *ngIf="this.loginService.isLogged() == 'coach'">
+    <div class="col-12 d-flex">
+        <form class="col-12 col-md-4 m-auto p-3" #formTraining="ngForm">
+            <div class="col-12 py-1">
+                <label class="col-12" for="id_type">Type *</label>
+                <input class="col-12" type="text" name="type" id="id_type" [(ngModel)]="training.type" required #type="ngModel"/>
+
+                <div class="col-12 alert alert-danger" *ngIf="type.invalid && (type.dirty || type.touched)">
+                    <div *ngIf="type.errors.required">Type is required</div>
+                </div>
+            </div>
+
+            <div class="col-12 py-1">
+                <label class="col-12" for="id_name">Name *</label>
+                <input class="col-12" type="text" name="name" id="id_name" [(ngModel)]="training.name" required #name="ngModel"/>
+                
+                <div class="col-12 alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                    <div *ngIf="name.errors.required">Name is required</div>
+                </div>
+            </div>
+
+            <div class="col-12 py-1">
+                <label class="col-12" for="id_video">Video *</label>
+                <input class="col-12" type="text" name="video" id="id_video" [(ngModel)]="training.video" required #video="ngModel"/>
+        
+                <div class="col-12 alert alert-danger" *ngIf="video.invalid && (video.dirty || video.touched)">
+                    <div *ngIf="video.errors.required">Video day is required</div>
+                </div>
+            </div>
+
+            <div class="col-12 py-1" *ngIf="action=='new'">
+                <label class="col-12" for="id_img">Img *</label>
+                <input class="col-12" type="file" id="id_img" name="img" accept=".png, .jpg, .jpeg, .mbp" alife-file-to-base64 multiple (onFileChanged)="onFileChanges($event)" required [(ngModel)]="msg" #img="ngModel"/>
+                
+                <div class="col-12 alert alert-danger" *ngIf="img.invalid && (img.dirty || img.touched)">
+                    <div *ngIf="img.errors.required">Img is required</div>
+                </div>
+            </div>
+
+            <div class="col-12 text-center py-1" *ngIf="action=='edit'">
+                <label class="col-12" for="id_img">Img</label>
+                <input class="col-12" type="file" id="id_img" name="img" accept=".png, .jpg, .jpeg, .mbp" alife-file-to-base64 multiple (onFileChanged)="onFileChanges($event)"/>
+                
+                <img class="img-form" [src]="training.img" alt="img"/>
+            </div>
+
+            <div class="col-12 py-2 px-md-3 px-lg-5">
+                <button class="col-12" *ngIf="action=='new'" [disabled]="formTraining.invalid" (click)="registerTraining(formTraining)">Register</button>
+                <button class="col-12" *ngIf="action=='edit'" [disabled]="formTraining.invalid" (click)="saveTraining(formTraining)">Save</button>
+            </div>
+
+            <div class="col-12 py-2 px-md-3 px-lg-5">
+                <button class="col-12" (click)="returnTraining()">Return</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<section class="col-12 text-center" *ngIf="this.loginService.isLogged() != 'coach'">
+    <h1 class="col-12">PAGE NOT FOUND</h1>
+    <h6 class="col-12">We're sorry. The page you are looking for cannot be found.</h6>
+    <img class="col-12 img-block" src="../../../../../assets/seguridad.jpg" alt="seguridad">
+</section>

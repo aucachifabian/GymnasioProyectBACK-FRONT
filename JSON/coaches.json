@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "60d4c8ff20ac2b144ceba3a0"
+  },
+  "dni": "39111111",
+  "name": "Jorge",
+  "surname": "Castillo",
+  "phone": "+543881111",
+  "email": "abc@gmail.com",
+  "birth_date": {
+    "$date": "2021-01-01T00:00:00Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d4cd2520ac2b144ceba3a3"
+  },
+  "surname": "Castillo",
+  "dni": "39222222",
+  "name": "Emanuel",
+  "email": "123@gmail.com",
+  "phone": "+5438882222",
+  "birth_date": {
+    "$date": "2021-01-01T00:00:00Z"
+  },
+  "__v": 0
+}]

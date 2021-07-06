@@ -1,0 +1,60 @@
+<section *ngIf="this.loginService.isLogged() == 'coach' " class="col-12 row container-fluid">
+
+    <!-------------->
+    <!--Button Add-->
+    <!-------------->
+    <div class="col-12 col-md-3 d-flex px-5 my-5 px-md-0 px-lg-3 my-md-0">
+        <button class="col-12 m-auto" (click)="addNewDayRoutine()">Add new day routine|</button>
+    </div>
+
+    <!---------------->
+    <!-----Table------>
+    <!---------------->
+    <div class="col-12 col-md-9 table-responsive px-md-5" >
+        <table class="col-12 table table-hover text-center" [mfData]="dayRoutines" #mf="mfDataTable" [mfRowsOnPage]="6">
+            <thead class="col-12">
+                <tr class="col-12">
+                    <th class="col-2">
+                        <mfDefaultSorter by="dni">Objective</mfDefaultSorter>
+                    </th>
+                    <th class="col-2">
+                        <mfDefaultSorter by="dni">Intensity</mfDefaultSorter>
+                    </th>
+                    <th class="col-2">
+                        <mfDefaultSorter by="dni">Amount_Routine</mfDefaultSorter>
+                    </th>
+                    <th class="col-1"></th>
+                    <th class="col-1"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr class="col-12" *ngFor="let a of mf.data">
+                    <td class="col-2">{{a.objective}}</td>
+                    <td class="col-2">{{a.intensity}}</td>
+                    <td class="col-2">{{a.day}}</td>
+                    <td class="col-1">
+                        <button (click)="editDayRoutine(a._id)">Edit</button>
+                    </td>   
+                    <td class="col-1">
+                        <button (click)="deleteDayRoutine(a._id)">Delete</button>
+                    </td>          
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <mfBootstrapPaginator></mfBootstrapPaginator>
+                        <h6> Total Routines : {{ dayRoutines.length }}</h6>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</section>
+
+<section class="col-12 text-center" *ngIf="this.loginService.isLogged() != 'coach'">
+    <h1 class="col-12">PAGE NOT FOUND</h1>
+    <h6 class="col-12">We're sorry. The page you are looking for cannot be found.</h6>
+    <img class="col-12" src="assets/seguridad.jpg" alt="seguridad">
+</section>

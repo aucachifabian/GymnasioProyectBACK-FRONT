@@ -1,0 +1,269 @@
+/** {
+    padding: 0;
+    margin: 0%;
+  }*/
+
+  *:focus {
+    outline: none;
+  }
+  
+  .red {
+    outline: red 1px solid;
+  }
+  
+  .blue {
+    outline: blue 1px solid;
+  }
+  /********************Input********************/
+  
+  input {
+    border: none;
+    color: #0d0d0d;
+    padding: 5px;
+    font-size: 15px;
+    border: 2px solid #f6f6f6;
+    border-radius: 5px;
+  }
+  
+  input:focus {
+    border-width: 2px;
+    border-color: #39ace7;
+  }
+  
+  /********************Label********************/
+  
+  label {
+    color: #808080;
+  }
+  
+  /********************Button********************/
+  
+  button {
+    background-color: #56baed;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    font-size: 15px;
+    box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+    border-radius: 5px;
+  }
+
+  .btn-class{
+    background-color: #56baed;
+    border: none;
+    color: white;
+    font-size: 15px;
+    box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #39ace7;
+  }
+  
+  button:active {
+    transform: scale(0.97);
+  }
+  
+  button:disabled {
+    opacity: 0.5;
+  }
+
+.accumulator
+{
+  background-image: url('../../../../../../../assets/img/fondFitnes.png');
+  background-size: 100% 100%;
+}
+
+.card-animation{
+  background-color: #56baed;
+  box-shadow: 5px 2px 2px black;
+
+}
+
+.card-animation img{
+  border: 4px solid rgb(56, 73, 77);
+} 
+
+.outer {
+    width: 100%;
+    height: 400px;
+    background-color: rgba(208, 217, 221, 0.432);
+    padding: 0;
+    border: 1px solid #000;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 1px;
+}
+
+.outer *{
+  margin: 0%;
+  padding: 0%;
+}
+
+
+
+.inner {
+    width: auto;
+    vertical-align: middle;
+    display: inline-block; 
+    margin-left : 12px !important;
+    font-size: 15px;
+}
+
+.inner button{
+  font-size: 15px;
+}
+
+
+/*---------signup-step-------------*/
+
+.signup-step-container{
+	padding: 150px 0px;
+	padding-bottom: 60px;
+}
+
+
+
+
+    .wizard .nav-tabs {
+        position: relative;
+        margin-bottom: 0;
+        border-bottom-color: transparent;
+    }
+
+    .wizard > div.wizard-inner {
+            position: relative;
+    margin-bottom: 50px;
+    text-align: center;
+    }
+
+.connecting-line {
+    height: 2px;
+    background: #e0e0e0;
+    position: absolute;
+    width: 50%;
+    margin: 0 auto;
+    margin-left: 14%;
+    left: 0;
+    right: 0;
+    top: 15px;
+    z-index: 1;
+}
+
+.wizard .nav-tabs > li.active > a, .wizard .nav-tabs > li.active > a:hover, .wizard .nav-tabs > li.active > a:focus {
+    color: #555555;
+    cursor: default;
+    border: 0;
+    border-bottom-color: transparent;
+}
+
+span.round-tab {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 16px;
+    color: #0e214b;
+    font-weight: 500;
+    border: 1px solid #ddd;
+}
+span.round-tab i{
+    color:#555555;
+}
+.wizard li.active span.round-tab {
+        background: #0db02b;
+    color: #fff;
+    border-color: #0db02b;
+}
+.wizard li.active span.round-tab i{
+    color: #5bc0de;
+}
+.wizard .nav-tabs > li.active > a i{
+	color: #0db02b;
+}
+
+.wizard .nav-tabs > li {
+    width: 25%;
+}
+
+.wizard li:after {
+    content: " ";
+    position: absolute;
+    left: 46%;
+    opacity: 0;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 5px solid transparent;
+    border-bottom-color: red;
+    transition: 0.1s ease-in-out;
+}
+
+
+
+.wizard .nav-tabs > li a {
+    width: 30px;
+    height: 30px;
+    margin: 20px auto;
+    border-radius: 100%;
+    padding: 0;
+    background-color: transparent;
+    position: relative;
+    top: 0;
+}
+.wizard .nav-tabs > li a i{
+	position: absolute;
+    top: -15px;
+    font-style: normal;
+    font-weight: 400;
+    white-space: nowrap;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    font-weight: 700;
+    color: #000;
+}
+
+    .wizard .nav-tabs > li a:hover {
+        background: transparent;
+    }
+
+.wizard .tab-pane {
+    position: relative;
+    padding-top: 20px;
+}
+
+
+.wizard h3 {
+    margin-top: 0;
+}
+.prev-step,
+.next-step{
+    font-size: 13px;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 30px;
+}
+.next-step{
+	background-color: #0db02b;
+}
+.skip-btn{
+	background-color: #cec12d;
+}
+.step-head{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.term-check{
+	font-size: 14px;
+	font-weight: 400;
+}

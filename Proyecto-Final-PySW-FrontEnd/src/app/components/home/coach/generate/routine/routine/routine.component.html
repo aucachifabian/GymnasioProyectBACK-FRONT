@@ -1,0 +1,96 @@
+<section *ngIf="this.loginService.isLogged() == 'coach' " class="col-12 row container-fluid">
+
+    <!-------------->
+    <!--Button Add-->
+    <!-------------->
+    <div class="col-12 col-md-3 px-5 my-5 px-md-0 px-lg-3 my-md-0">
+        <button class="col-12 m-auto" (click)="addNewRoutine()">Add new routine</button>
+    </div>
+
+    <!---------------->
+    <!-----Table------>
+    <!---------------->
+    <div class="col-12 col-md-9 table-responsive px-md-5">
+        <table class="col-12 table table-hover text-center" [mfData]="routines" #mf="mfDataTable" [mfRowsOnPage]="3">
+            <thead class="col-12">
+                <tr class="col-12">
+                    
+                    <th class="col-1">      
+                        <mfDefaultSorter by="dni">Tipo</mfDefaultSorter>
+                    </th>
+                    <th class="col-2">      
+                        <mfDefaultSorter by="dni">Repeticiones</mfDefaultSorter>
+                    </th>
+                    
+                    <th class="col-2">      
+                        <mfDefaultSorter by="dni">Series</mfDefaultSorter>
+                    </th>
+
+                    
+                    <th class="col-2">      
+                        <mfDefaultSorter by="dni">Descanso</mfDefaultSorter>
+                    </th>
+
+                    
+                    <th class="col-2">      
+                        <mfDefaultSorter by="dni">Intensidad</mfDefaultSorter>
+                    </th>
+
+                    
+                    <th class="col-3">      
+                        <mfDefaultSorter by="dni">Ejercicios</mfDefaultSorter>
+                    </th>
+
+                    
+                    <th class="col-1">      
+                        <mfDefaultSorter by="dni"></mfDefaultSorter>
+                    </th>
+                    
+                    <th class="col-1">      
+                        <mfDefaultSorter by="dni"></mfDefaultSorter>
+                    </th>
+                    <!--
+                    <th class="col-2">Repeticiones</th>
+                    <th class="col-2">Series</th>
+                    <th class="col-2">Descanso</th>
+                    <th class="col-2">Intensidad</th>
+                    <th class="col-2">Ejercicios</th>
+                    <th class="col-1"></th>
+                    <th class="col-1"></th>-->
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr class="col-12" *ngFor="let a of mf.data">
+                    <td class="col-1">{{a.type}}</td>
+                    <td class="col-2">{{a.repetition}}</td>
+                    <td class="col-1">{{a.serie}}</td>
+                    <td class="col-2">{{a.rest}}</td>
+                    <td class="col-2">{{a.intensity}}</td>
+                    <td class="col-3"><p *ngFor="let b of a.training"> {{ b.name }},</p></td>
+                    <td class="col-1">
+                        <button (click)="editRoutine(a._id)">Edit</button>
+                    </td>   
+                    <td class="col-1">
+                        <button (click)="deleteRoutine(a._id)">Delete</button>
+                    </td>          
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <mfBootstrapPaginator></mfBootstrapPaginator>
+                        <h6> Total Routines : {{ routines.length }}</h6>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <!--<button class="btn btn-danger">Descargar Rutina Pdf</button>-->
+</section>
+
+<section class="col-12 text-center" *ngIf="this.loginService.isLogged() != 'coach'">
+    <h1 class="col-12">PAGE NOT FOUND</h1>
+    <h6 class="col-12">We're sorry. The page you are looking for cannot be found.</h6>
+    <img class="col-12" src="../../../../../assets/seguridad.jpg" alt="seguridad">
+</section>

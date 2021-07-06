@@ -1,0 +1,35 @@
+<section class="container" *ngIf="this.loginService.isLogged() == 'student'">    
+    <div class="col-12 row my-5">
+        <div class="col-8 row">
+            <div class="col-6">
+                <img class="card-img-top" src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="..."/>
+            </div>
+
+            <div class="col-6 card-body">
+                <p class="card-text">Detalle del student</p>
+                <p class="card-text">Detalle del student</p>
+                <p class="card-text">Detalle del student</p>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="col-6 my-3 m-auto">
+                <button class="col-12 btn btn-primary" type="button" (click)="checkAssistance()">Check Assistances</button>
+            </div>
+        
+            <div class="col-6 my-3 m-auto">
+                <button class="col-12 btn btn-primary" type="button" (click)="checkPayment()">Check Payments</button>
+            </div>
+        
+            <div class="col-6 my-3 m-auto">
+                <button class="col-12 btn btn-primary" type="button" (click)="checkRoutine()">Check Routines</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="col-12 text-center" *ngIf="this.loginService.isLogged() != 'student'">
+    <h1 class="col-12">PAGE NOT FOUND</h1>
+    <h6 class="col-12">We're sorry. The page you are looking for cannot be found.</h6>
+    <img class="col-12" src="../../../../../assets/seguridad.jpg" alt="seguridad">
+</section>

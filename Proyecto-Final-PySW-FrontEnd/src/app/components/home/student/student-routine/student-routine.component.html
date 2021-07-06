@@ -1,0 +1,97 @@
+<section class="container" *ngIf="this.loginService.isLogged() == 'student'">
+    <h2 class="col-12 border-bottom my-3 p-2">Objective {{day_routine.objective}}</h2>
+    <h4 class="col-12 border-bottom my-3 p-1">Intensity {{day_routine.intensity}}</h4>
+
+    <div class="col-12 row my-3" *ngIf="!btnPlus">
+        <div class="col-2 m-auto">
+            <button class="col-12 btn btn-primary" type="button" (click)="returnHome()">RETURN</button>
+        </div>
+
+        <div class="col-10 col-md-9 table-responsive text-center">
+            <table class="col-12 table table-hover" [mfData]="routines" #mf="mfDataTable" [mfRowsOnPage]="amount_day">
+                <thead class="col-12">
+                    <tr class="col-12">
+                        <th class="col-1">
+                            <mfDefaultSorter>Weekday</mfDefaultSorter>
+                        </th>
+
+                        <th class="col-2">
+                            <mfDefaultSorter by="type">Type</mfDefaultSorter>
+                        </th>
+
+                        <th class="col-2">
+                            <mfDefaultSorter by="serie">Serie</mfDefaultSorter>
+                        </th>
+
+                        <th class="col-2">
+                            <mfDefaultSorter by="repetition">Repetition</mfDefaultSorter>
+                        </th>
+
+                        <th class="col-2">
+                            <mfDefaultSorter by="rest">Rest</mfDefaultSorter>
+                        </th>
+
+                        <th class="col-2">
+                            <mfDefaultSorter by="img">Photo</mfDefaultSorter>
+                        </th>
+
+                        <th class="col-1">
+                            <mfDefaultSorter></mfDefaultSorter>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr class="col-12" *ngFor="let r of mf.data index as i">
+                        <td class="col-1">{{i+1}}</td>
+                        <td class="col-2">{{r.type}}</td>
+                        <td class="col-2">{{r.serie}}</td>
+                        <td class="col-2">{{r.repetition}}</td>
+                        <td class="col-2">{{r.rest}}</td>
+                        <td class="col-2">
+                            <img class="col-12" [src]="r.img" alt="img"/>
+                        </td>
+                        <td class="col-1">
+                            <button class="col-12 btn btn-primary" type="button" (click)="searchTrainings(r._id)">+</button>
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td>
+                            <mfBootstrapPaginator></mfBootstrapPaginator>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-12 m-auto my-3" *ngIf="btnPlus">
+        <div class="col-12 row">
+            <div class="col-4" *ngFor="let t of trainings">
+                <div class="card">
+                    <div class="card-body p-0">
+                        <h5 class="card-title text-center border-bottom my-1 p-2">{{t.type}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted my-1 p-1">{{t.name}}</h6>
+                    </div>
+
+                    <img class="col-12 card-img-top" [src]="t.img" alt="imagen"/>
+
+                    <a class="col-12 text-center" [href]="t.video">{{t.video}}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 d-flex my-5">
+            <button class="col-6 btn btn-primary m-auto" type="button" (click)="return()">RETURN</button>
+        </div>
+    </div>
+</section>
+
+<section class="col-12 text-center" *ngIf="this.loginService.isLogged() != 'student'">
+    <h1 class="col-12">PAGE NOT FOUND</h1>
+    <h6 class="col-12">We're sorry. The page you are looking for cannot be found.</h6>
+    <img class="col-12" src="../../../../../assets/seguridad.jpg" alt="seguridad">
+</section>

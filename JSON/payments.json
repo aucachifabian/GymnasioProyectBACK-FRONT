@@ -1,0 +1,151 @@
+[{
+  "_id": {
+    "$oid": "60d5f239ffd89117807eeadf"
+  },
+  "student": {
+    "$oid": "60d5524040acae144c4ee4a1"
+  },
+  "name_arrangement": "BASIC",
+  "price": 1000,
+  "amount_day": 2,
+  "pay_day": {
+    "$date": "2021-07-25T00:00:00Z"
+  },
+  "pay_mode": "cash",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d5f2e0ffd89117807eeae2"
+  },
+  "student": {
+    "$oid": "60d5526a40acae144c4ee4a2"
+  },
+  "name_arrangement": "FULL",
+  "price": 1500,
+  "amount_day": 4,
+  "pay_day": {
+    "$date": "2021-07-25T00:00:00Z"
+  },
+  "pay_mode": "cash",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d5f304ffd89117807eeae5"
+  },
+  "student": {
+    "$oid": "60d5528e40acae144c4ee4a3"
+  },
+  "name_arrangement": "LIBRE",
+  "price": 2000,
+  "amount_day": 6,
+  "pay_day": {
+    "$date": "2021-07-26T00:00:00Z"
+  },
+  "pay_mode": "cash",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d5f324ffd89117807eeae8"
+  },
+  "student": {
+    "$oid": "60d552dd40acae144c4ee4a4"
+  },
+  "name_arrangement": "BASIC",
+  "price": 1000,
+  "amount_day": 2,
+  "pay_day": {
+    "$date": "2021-07-28T00:00:00Z"
+  },
+  "pay_mode": "cash",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d5f337ffd89117807eeaeb"
+  },
+  "student": {
+    "$oid": "60d5531440acae144c4ee4a5"
+  },
+  "name_arrangement": "FULL",
+  "price": 1500,
+  "amount_day": 4,
+  "pay_day": {
+    "$date": "2021-07-28T00:00:00Z"
+  },
+  "pay_mode": "cash",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d5f4fdffd89117807eeaf1"
+  },
+  "student": {
+    "$oid": "60d5534840acae144c4ee4a6"
+  },
+  "name_arrangement": "BASIC",
+  "price": 1000,
+  "amount_day": 2,
+  "pay_day": {
+    "$date": "2021-08-04T00:00:00Z"
+  },
+  "pay_mode": "cash",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d5f57dffd89117807eeaf4"
+  },
+  "student": {
+    "$oid": "60d5f0abffd89117807eead7"
+  },
+  "name_arrangement": "LIBRE",
+  "price": 2000,
+  "amount_day": 6,
+  "pay_day": {
+    "$date": "2021-08-05T00:00:00Z"
+  },
+  "pay_mode": "cash",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d5f640ffd89117807eeafa"
+  },
+  "student": {
+    "$oid": "60d5f121ffd89117807eead9"
+  },
+  "name_arrangement": "BASIC",
+  "price": 1000,
+  "amount_day": 2,
+  "pay_day": {
+    "$date": "2021-09-02T00:00:00Z"
+  },
+  "pay_mode": "cash",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d5f65cffd89117807eeafd"
+  },
+  "student": {
+    "$oid": "60d5f14cffd89117807eeada"
+  },
+  "name_arrangement": "BASIC",
+  "price": 1000,
+  "amount_day": 2,
+  "pay_day": {
+    "$date": "2021-09-08T00:00:00Z"
+  },
+  "pay_mode": "cash",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d5f76bffd89117807eeb03"
+  },
+  "student": {
+    "$oid": "60d5f0e0ffd89117807eead8"
+  },
+  "name_arrangement": "BASIC",
+  "price": 1000,
+  "amount_day": 2,
+  "pay_day": {
+    "$date": "2021-09-08T00:00:00Z"
+  },
+  "pay_mode": "cash",
+  "__v": 0
+}]
